@@ -8,6 +8,9 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - [TypeScript](https://www.typescriptlang.org/)
 - [React](https://reactjs.org)
+- [Node.js](https://nodejs.org/en/)
+- [Express](https://expressjs.com/pt-br/)
+- [Knex](http://knexjs.org/)
 
 ### :mortar_board: Quem ministrou?
 
