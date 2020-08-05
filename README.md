@@ -16,4 +16,4 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 A Next Level Week foi ministrada pelo [Diego Fernandes](https://github.com/diego3g)
 
-###### Desenvolvido na semana do Next Level Week 2 da [RocketSeat](https://rocketseat.com.br) :rocket:.
+###### Desenvolvido na semana do Next Level Week #2 da [RocketSeat](https://rocketseat.com.br) :rocket:.
