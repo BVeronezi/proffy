@@ -1,48 +1,57 @@
-import React from "react";
-import whatsappIcon from "../../assets/icons/whatsapp.svg";
-import "./styles.css";
+import React from 'react';
+import whatsappIcon from '../../assets/icons/whatsapp.svg';
+import './styles.css';
 
-function TeacherItem() {
+import api from '../../services/api';
+
+export interface Teacher {
+  id: number;
+  avatar: string;
+  bio: string;
+  cost: number;
+  name: string;
+  subject: string;
+  whatsapp: string;
+}
+
+export interface TeacherItemProps {
+  teacher: Teacher;
+}
+
+const TeacherItem: React.FC<TeacherItemProps> = ({ teacher }) => {
+  function createNewConnection() {
+    api.post('connections', {
+      user_id: teacher.id,
+    });
+  }
+
   return (
     <article className="teacher-item">
       <header>
-        <img
-          src="https://avatars0.githubusercontent.com/u/32149875?s=460&v=4"
-          alt="Bianca Veronezi"
-        />
+        <img src={teacher.avatar} alt={teacher.name} />
         <div>
-          <strong>Bianca Veronezi</strong>
-          <span>Computação</span>
+          <strong>{teacher.name}</strong>
+          <span>{teacher.subject}</span>
         </div>
       </header>
-
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tortor
-        leo, ultricies vel ante vitae, rhoncus cursus ligula. Vestibulum vel
-        diam ac tellus interdum convallis. Cras sed dolor a erat eleifend
-        ornare. Aliquam erat volutpat. Nunc vitae ullamcorper leo. Duis
-        convallis nisl lacinia, cursus enim sed, commodo purus. Phasellus ligula
-        lectus, placerat at lacinia ut, feugiat scelerisque neque. Cras
-        fringilla, quam et dapibus ullamcorper, tellus massa consectetur nunc,
-        ac iaculis ante odio sed magna. Cras eu quam libero. Nulla id dui
-        lectus. Aenean quis sodales sem. Fusce elit lectus, luctus sit amet
-        tellus quis, viverra congue leo. Interdum et malesuada fames ac ante
-        ipsum primis in faucibus. Pellentesque id sem vel neque accumsan
-        dignissim.
-      </p>
+      <p>{teacher.bio}</p>
 
       <footer>
         <p>
           Preço/hora
-          <strong>R$ 100,00</strong>
+          <strong>R$ {teacher.cost}</strong>
         </p>
-        <button type="button">
-          <img src={whatsappIcon} alt="Ícone do WhatsApp" />
+        <a
+          onClick={createNewConnection}
+          target="_blank"
+          href={`https://wa.me/${teacher.whatsapp}`}
+        >
+          <img src={whatsappIcon} alt="Whatsapp" />
           Entrar em contato
-        </button>
+        </a>
       </footer>
     </article>
   );
-}
+};
 
 export default TeacherItem;
