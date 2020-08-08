@@ -6,10 +6,12 @@ Projeto de plataforma de estudos online, para contratação de professores freel
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
+- [Node.js](https://nodejs.org/en/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [React](https://reactjs.org)
-- [Node.js](https://nodejs.org/en/)
+- [React Native](https://facebook.github.io/react-native/)
 - [Express](https://expressjs.com/pt-br/)
+- [Expo](https://expo.io/)
 - [Knex](http://knexjs.org/)
 
 ### :mortar_board: Quem ministrou?
